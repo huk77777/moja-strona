@@ -1,0 +1,60 @@
+<!DOCTYPE html> <html lang="pl"> 
+    <head>     
+        <meta charset="UTF-8">     
+        <meta 
+        
+    name="viewport" content="width=device-width, 
+    initial-scale=1.0">     
+    <title>Zegar</title>     <style>        
+     body  {     margin: 0;   
+       font-family: Arial, sans-serif;   
+         color: rgb(87, 83, 83); background-color: black;
+        } .sekcja { 
+          position: relative;  
+                   width: 100%; } .sekcja img {   
+                      display: block;  
+                         width: 100%;  
+                         height: auto; } .tlo {    
+                             display: block;   
+                             width: 100%;     
+                             height: auto; } 
+                             .zegar 
+                             {     
+                                position: absolute; 
+                                    top: calc(50% - 250px);    
+                                     left: 50%;     
+                                     transform: translate(-50%, -50%) scale(0.5);   
+                                       font-size: 32px;    
+                                        font-weight: normal;   
+                                         letter-spacing: 1px; 
+                                        white-space: nowrap;}  
+                                         @media (max-width: 600px)
+                                          
+
+    
+             
+                                         </style> 
+                                         </head> 
+                                         <body>      
+                                             <div class="sekcja">        
+                                                 <img src="tlo1.png">         
+                                                 <div class="zegar">            
+                                                     <span>Czas: </span>             
+                                                     <span id="godzina">00:00:00</span>           
+                                                      <span> </span>             
+                                                      <span id="data">0.0.0000</span>       
+                                                      </div>     
+                                                    </div>   
+                                                        <div class="sekcja">        
+                                                         <img src="tlo2.png">   
+                                                           </div>    
+                                                            <div class="sekcja">       
+                                                                  <img src="tlo3.png">      
+                                                                     </div>   
+                                                                     <script> function aktualizujZegar() {  
+                                                                           const teraz = new Date();   
+                                                                      const godzina = teraz.toLocaleTimeString("pl-PL", {         timeZone: "Europe/Warsaw",         hour: "2-digit",         minute: "2-digit",         second: "2-digit",       
+                                                                        hour12: false     });   
+                                                      const data = teraz.toLocaleDateString("pl-PL", {         timeZone: "Europe/Warsaw",         day: "numeric",         month: "numeric",         year: "numeric"     });     document.getElementById("godzina").textContent = godzina;     document.getElementById("data").textContent = data; } aktualizujZegar(); setInterval(aktualizujZegar, 1000); 
+
+</script> </body> </html>
